@@ -1,0 +1,16 @@
+source ~/.vimrc
+
+" Idea specific settings
+set ideajoin
+set clipboard=ideaput
+set keep-english-in-normal-and-restore-in-insert
+
+" Enable IdeaVim plugins
+set argtextobj
+set commentary
+set exchange
+set matchit
+set sneak
+set surround
+set textobj-entire
+set textobj-indent
