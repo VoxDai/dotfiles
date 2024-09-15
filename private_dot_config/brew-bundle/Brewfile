@@ -1,0 +1,39 @@
+tap "homebrew/bundle"
+tap "homebrew/services"
+brew "bat"
+brew "chezmoi"
+brew "ffmpeg"
+brew "lsd"
+brew "mas"
+brew "rustup"
+cask "anaconda"
+cask "clion"
+cask "guitar-pro"
+cask "hiddenbar"
+cask "input-source-pro"
+cask "maccy"
+cask "microsoft-excel"
+cask "microsoft-powerpoint"
+cask "microsoft-word"
+cask "pycharm"
+cask "qlmarkdown"
+cask "rar"
+cask "rustrover"
+cask "surge"
+cask "syntax-highlight"
+cask "visual-studio-code"
+mas "Compressor", id: 424390742
+mas "Final Cut Pro", id: 424389933
+mas "Keynote 讲演", id: 409183694
+mas "Logic Pro", id: 634148309
+mas "MainStage", id: 634159523
+mas "Motion", id: 434290957
+mas "Numbers 表格", id: 409203825
+mas "OnsPlayer+", id: 6502432213
+mas "Pages 文稿", id: 409201541
+mas "Steam Link", id: 1246969117
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "k--kato.intellij-idea-keybindings"
+vscode "ms-ceintl.vscode-language-pack-zh-hans"
+vscode "vscodevim.vim"
