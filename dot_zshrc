@@ -19,5 +19,9 @@ plugins=(
   zsh-autocomplete
 )
 
+# Set alias
+alias ls="lsd"
+alias cat="bat"
+
 source $ZSH/oh-my-zsh.sh
 
