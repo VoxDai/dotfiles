@@ -21,6 +21,14 @@ plugins=(
   zsh-autocomplete
 )
 
+# Set alias
+zstyle ':omz:*' aliases no
+alias ls="lsd"
+alias ll="ls -l"
+alias la="ls -lA"
+alias lt="ls --tree"
+alias cat="bat"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -35,14 +43,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# Set alias
-zstyle ':omz:*' aliases no
-alias ls="lsd"
-alias ll="ls -l"
-alias la="ls -lA"
-alias lt="ls --tree"
-alias cat="bat"
 
 # Just source it.
 source $ZSH/oh-my-zsh.sh
