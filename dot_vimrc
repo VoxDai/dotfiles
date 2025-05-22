@@ -233,7 +233,7 @@ map <leader>f <Plug>(easymotion-f)
 map <leader>F <Plug>(easymotion-F)
 map <leader>t <Plug>(easymotion-t)
 map <leader>T <Plug>(easymotion-T)
-map <leader>s <Plug>(easymotion-s)
+map <leader>s <Plug>(easymotion-s2)
 
 map <leader>w <Plug>(easymotion-w)
 map <leader>W <Plug>(easymotion-W)
