@@ -175,12 +175,19 @@ set wrap "Wrap lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Switch `^` and `H`, `$` and `L`
 noremap H ^
 noremap ^ H
 noremap L $
 noremap $ L
+
+" Use `U` to redo
+nnoremap U <C-r> 
+
+" clear search highlights
 nnoremap gh :noh<CR>
 
+" EasyMotion
 map <leader>f <Plug>(easymotion-f)
 map <leader>F <Plug>(easymotion-F)
 map <leader>t <Plug>(easymotion-t)
