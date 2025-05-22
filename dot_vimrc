@@ -15,12 +15,14 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-commentary'
-Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-surround'
+Plug 'tommcdo/vim-exchange'
+Plug 'machakann/vim-highlightedyank'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'vim-scripts/argtextobj.vim'
+Plug 'vim-scripts/ReplaceWithRegister'
 call plug#end()
 
 " EasyMotion setting
@@ -29,6 +31,9 @@ let g:EasyMotion_smartcase = 1  " Enable smart case
 
 " Argtextobj setting
 let g:argtextobj_pairs = "[:],(:),<:>"
+
+" vim-highlightedyank setting
+let g:highlightedyank_highlight_duration = 300
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -206,5 +211,10 @@ map <leader>E <Plug>(easymotion-E)
 
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
+
+" ReplaceWithRegister
+nmap gr <Plug>ReplaceWithRegisterOperator
+nmap gR <Plug>ReplaceWithRegisterLine
+xmap gr <Plug>ReplaceWithRegisterVisual
 
 
