@@ -192,6 +192,12 @@ noremap ^ H
 noremap L $
 noremap $ L
 
+" Use `U` to redo
+nnoremap U <C-r>
+
+" clear search highlights
+nnoremap gh :noh<CR>
+
 " Redirect cut/delete/change commands to use the black hole register (_)
 nnoremap d "_d
 xnoremap d "_d
@@ -208,11 +214,6 @@ xnoremap x "_x
 nnoremap X "_X
 xnoremap X "_X
 
-nnoremap s "_s
-xnoremap s "_s
-nnoremap S "_S
-xnoremap S "_S
-
 " Remap `m` as cut (original `d`)
 nnoremap m d
 xnoremap m d
@@ -222,18 +223,16 @@ nnoremap mm dd
 " Restore `m` (mark) functionality with `gm`
 nnoremap gm m
 
-" Use `U` to redo
-nnoremap U <C-r>
-
-" clear search highlights
-nnoremap gh :noh<CR>
+" Serround
+nmap S ys
 
 " EasyMotion
+map s <Plug>(easymotion-s2)
+
 map <leader>f <Plug>(easymotion-f)
 map <leader>F <Plug>(easymotion-F)
 map <leader>t <Plug>(easymotion-t)
 map <leader>T <Plug>(easymotion-T)
-map <leader>s <Plug>(easymotion-s2)
 
 map <leader>w <Plug>(easymotion-w)
 map <leader>W <Plug>(easymotion-W)
