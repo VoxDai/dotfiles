@@ -5,8 +5,10 @@ set argtextobj
 set commentary
 set exchange
 set easymotion
+set highlightedyank
 set matchit
 set NERDTree
+set ReplaceWithRegister
 set surround
 set textobj-entire
 set textobj-indent
