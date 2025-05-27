@@ -106,7 +106,7 @@ set ignorecase
 set smartcase
 
 " Highlight search results
-set hlsearch
+set nohlsearch
 
 " Makes search act like search in modern browsers
 set incsearch
@@ -197,8 +197,8 @@ noremap $ L
 " Use `U` to redo
 nnoremap U <C-r>
 
-" clear search highlights
-nnoremap gh :noh<CR>
+" Use `Q` to toggle search highlights
+nnoremap <silent> Q :set hlsearch!<CR>
 
 " Redirect cut/delete/change commands to use the black hole register (_)
 nnoremap d "_d
