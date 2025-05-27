@@ -1,7 +1,9 @@
 source ~/.vimrc
 
 " IdeaVim plugins
+set functiontextobj
 set NERDTree
+set peekaboo
 
 " Idea specific settings
 set ideajoin
@@ -10,4 +12,3 @@ set idearefactormode=normal
 set ideastatusicon=gray
 set clipboard+=ideaput
 set keep-english-in-normal-and-restore-in-insert
-
