@@ -19,6 +19,7 @@ plugins=(
   zsh-syntax-highlighting
   fast-syntax-highlighting
   zsh-autocomplete
+  conda-zsh-completion
 )
 
 # Set alias
