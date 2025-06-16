@@ -18,6 +18,5 @@ set ideajoin
 set ideamarks
 set idearefactormode=normal
 set ideastatusicon=gray
-set clipboard=ideaput
+set clipboard+=ideaput
 set keep-english-in-normal-and-restore-in-insert
-
