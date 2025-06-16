@@ -236,12 +236,33 @@ nmap <Leader>s <Plug>(easymotion-sn)
 xmap <Leader>s <Plug>(easymotion-sn)
 omap <Leader>z <Plug>(easymotion-sn)
 
+nmap <Leader>w <Plug>(easymotion-bd-w)
+xmap <Leader>w <Plug>(easymotion-bd-w)
+omap <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>W <Plug>(easymotion-bd-W)
+xmap <Leader>W <Plug>(easymotion-bd-W)
+omap <Leader>W <Plug>(easymotion-bd-W)
+
+nmap <Leader>e <Plug>(easymotion-bd-e)
+xmap <Leader>e <Plug>(easymotion-bd-e)
+omap <Leader>e <Plug>(easymotion-bd-e)
+nmap <Leader>E <Plug>(easymotion-bd-E)
+xmap <Leader>E <Plug>(easymotion-bd-E)
+omap <Leader>E <Plug>(easymotion-bd-E)
+
 nmap <Leader>j <Plug>(easymotion-j)
 xmap <Leader>j <Plug>(easymotion-j)
 omap <Leader>j <Plug>(easymotion-j)
 nmap <Leader>k <Plug>(easymotion-k)
 xmap <Leader>k <Plug>(easymotion-k)
 omap <Leader>k <Plug>(easymotion-k)
+
+nmap <Leader>n <Plug>(easymotion-vim-n)
+xmap <Leader>n <Plug>(easymotion-vim-n)
+omap <Leader>n <Plug>(easymotion-vim-n)
+nmap <Leader>N <Plug>(easymotion-vim-N)
+xmap <Leader>N <Plug>(easymotion-vim-N)
+omap <Leader>N <Plug>(easymotion-vim-N)
 
 " ReplaceWithRegister
 nmap gr <Plug>ReplaceWithRegisterOperator
