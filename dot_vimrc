@@ -229,9 +229,19 @@ nnoremap gm m
 nmap S ys
 
 " EasyMotion
-map s <Plug>(easymotion-s2)
-map gj <Plug>(easymotion-j)
-map gk <Plug>(easymotion-k)
+nmap s <Plug>(easymotion-s2)
+xmap s <Plug>(easymotion-s2)
+omap z <Plug>(easymotion-s2)
+nmap <Leader>s <Plug>(easymotion-sn)
+xmap <Leader>s <Plug>(easymotion-sn)
+omap <Leader>z <Plug>(easymotion-sn)
+
+nmap <Leader>j <Plug>(easymotion-j)
+xmap <Leader>j <Plug>(easymotion-j)
+omap <Leader>j <Plug>(easymotion-j)
+nmap <Leader>k <Plug>(easymotion-k)
+xmap <Leader>k <Plug>(easymotion-k)
+omap <Leader>k <Plug>(easymotion-k)
 
 " ReplaceWithRegister
 nmap gr <Plug>ReplaceWithRegisterOperator
