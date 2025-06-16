@@ -1,17 +1,7 @@
 source ~/.vimrc
 
 " IdeaVim plugins
-set argtextobj
-set commentary
-set exchange
-set easymotion
-set highlightedyank
-set matchit
 set NERDTree
-set ReplaceWithRegister
-set surround
-set textobj-entire
-set textobj-indent
 
 " Idea specific settings
 set ideajoin
@@ -20,3 +10,4 @@ set idearefactormode=normal
 set ideastatusicon=gray
 set clipboard+=ideaput
 set keep-english-in-normal-and-restore-in-insert
+
