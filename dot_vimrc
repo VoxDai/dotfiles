@@ -83,6 +83,8 @@ set laststatus=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
@@ -96,7 +98,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme ron
+    colorscheme torte
 catch
 endtry
 
