@@ -189,8 +189,59 @@ noremap ^ H
 noremap L $
 noremap $ L
 
+" Redirect cut/delete/change commands to use the black hole register (_)
+nnoremap d "_d
+xnoremap d "_d
+onoremap d "_d
+nnoremap dd "_dd
+xnoremap dd "_dd
+onoremap dd "_dd
+nnoremap D "_D
+xnoremap D "_D
+onoremap D "_D
+
+nnoremap c "_c
+xnoremap c "_c
+onoremap c "_c
+nnoremap cc "_cc
+xnoremap cc "_cc
+onoremap cc "_cc
+nnoremap C "_C
+xnoremap C "_C
+onoremap C "_C
+
+nnoremap x "_x
+xnoremap x "_x
+onoremap x "_x
+nnoremap X "_X
+xnoremap X "_X
+onoremap X "_X
+
+nnoremap s "_s
+xnoremap s "_s
+onoremap s "_s
+nnoremap S "_S
+xnoremap S "_S
+onoremap S "_S
+
+" Remap `m` as cut (original `d`)
+nnoremap m d
+xnoremap m d
+onoremap m d
+
+nnoremap mm dd
+xnoremap mm dd
+onoremap mm dd
+
+nnoremap M D
+xnoremap M D
+onoremap M D
+
+" Restore `m` (mark) functionality with `gm`
+nnoremap gm m
+
 " Use `U` to redo
-nnoremap U <C-r> 
+nnoremap U <C-r>
 
 " clear search highlights
 nnoremap gh :noh<CR>
