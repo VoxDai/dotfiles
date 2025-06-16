@@ -7,6 +7,7 @@ brew "mas"
 brew "rustup"
 cask "anaconda"
 cask "blender"
+cask "chatgpt"
 cask "clion"
 cask "guitar-pro"
 cask "hiddenbar"
@@ -21,15 +22,16 @@ cask "qlmarkdown"
 cask "rustrover"
 cask "surge"
 cask "syntax-highlight"
+cask "tencent-meeting"
 cask "visual-studio-code"
 mas "Compressor", id: 424390742
 mas "Final Cut Pro", id: 424389933
-mas "Keynote 讲演", id: 409183694
+mas "Keynote讲演", id: 409183694
 mas "Logic Pro", id: 634148309
 mas "MainStage", id: 634159523
 mas "Motion", id: 434290957
-mas "Numbers 表格", id: 409203825
-mas "Pages 文稿", id: 409201541
+mas "Numbers表格", id: 409203825
+mas "Pages文稿", id: 409201541
 mas "Steam Link", id: 1246969117
 vscode "k--kato.intellij-idea-keybindings"
 vscode "ms-ceintl.vscode-language-pack-zh-hans"
