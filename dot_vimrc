@@ -1,3 +1,36 @@
+" Disable Vi compatibility to enable Vim's enhanced features
+set nocompatible
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim-plug
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto install Vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-surround'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-indent'
+Plug 'vim-scripts/argtextobj.vim'
+call plug#end()
+
+" EasyMotion setting
+let g:EasyMotion_do_mapping = 0 " Disable default mapping
+let g:EasyMotion_smartcase = 1  " Enable smart case
+
+" Argtextobj setting
+let g:argtextobj_pairs = "[:],(:),<:>"
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -14,7 +47,7 @@ au FocusGained,BufEnter * silent! checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = " "
+let mapleader=" "
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,13 +176,25 @@ set wrap "Wrap lines
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap H ^
-
 noremap ^ H
-
 noremap L $
-
 noremap $ L
-
 nnoremap gh :noh<CR>
+
+map <leader>f <Plug>(easymotion-f)
+map <leader>F <Plug>(easymotion-F)
+map <leader>t <Plug>(easymotion-t)
+map <leader>T <Plug>(easymotion-T)
+map <leader>s <Plug>(easymotion-s)
+
+map <leader>w <Plug>(easymotion-w)
+map <leader>W <Plug>(easymotion-W)
+map <leader>b <Plug>(easymotion-b)
+map <leader>B <Plug>(easymotion-B)
+map <leader>e <Plug>(easymotion-e)
+map <leader>E <Plug>(easymotion-E)
+
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
 
 
