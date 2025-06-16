@@ -32,7 +32,9 @@ mas "MainStage", id: 634159523
 mas "Motion", id: 434290957
 mas "Numbers表格", id: 409203825
 mas "Pages文稿", id: 409201541
+mas "Pixelmator Pro", id: 1289583905
 mas "Steam Link", id: 1246969117
+mas "微信", id: 836500024
 vscode "k--kato.intellij-idea-keybindings"
 vscode "ms-ceintl.vscode-language-pack-zh-hans"
 vscode "yzhang.markdown-all-in-one"
