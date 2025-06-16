@@ -84,6 +84,9 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
+" Reduce delay when pressing Esc by setting a shorter keycode timeout
+set timeout timeoutlen=1000 ttimeoutlen=10
+
 " Always show current position
 set ruler
 
