@@ -10,6 +10,7 @@ set argtextobj
 set commentary
 set exchange
 set matchit
+set NERDTree
 set sneak
 set surround
 set textobj-entire
