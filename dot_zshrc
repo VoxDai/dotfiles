@@ -51,4 +51,10 @@ unset __conda_setup
 
 # Just source it.
 source $ZSH/oh-my-zsh.sh
+
+# Set zsh-autocomplete to leave out expansion section
+zstyle ':completion:*' completer _complete _complete:-fuzzy _correct _approximate _ignored
+
+# Source Powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
