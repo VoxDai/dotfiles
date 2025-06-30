@@ -21,6 +21,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'chrisbra/matchit'
 Plug 'dbakker/vim-paragraph-motion'
+Plug 'unblevable/quick-scope'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'tpope/vim-surround'
 Plug 'kana/vim-textobj-user'
@@ -37,6 +38,8 @@ let g:argtextobj_pairs = "[:],(:),<:>"
 " vim-highlightedyank setting
 let g:highlightedyank_highlight_duration = 300
 
+" quick-scope setting
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
