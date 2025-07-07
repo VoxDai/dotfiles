@@ -191,11 +191,16 @@ set wrap "Wrap lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Switch `^` and `H`, `$` and `L`
+" Yank from the cursor to the end of line
+noremap Y y$
+
+" Map `H` to move to the beginning of the line, `L` to the end
 noremap H ^
-noremap ^ H
 noremap L $
-noremap $ L
+
+" Insert a new line without enter insert mode
+nnoremap go :call append(line("."), "")<CR>
+nnoremap gO :call append(line(".") - 1, "")<CR>
 
 " Use `U` to redo
 nnoremap U <C-r>
@@ -228,58 +233,16 @@ nnoremap mm dd
 " Restore `m` (mark) functionality with `gm`
 nnoremap gm m
 
-" Serround
+" Show all marks
+nnoremap gM :marks<CR>
+
+" Surround
 nmap S ys
 
 " EasyMotion
-nmap s <Plug>(easymotion-s2)
-xmap s <Plug>(easymotion-s2)
-omap z <Plug>(easymotion-s2)
-nmap <Leader>s <Plug>(easymotion-sn)
-xmap <Leader>s <Plug>(easymotion-sn)
-omap <Leader>z <Plug>(easymotion-sn)
-
-nmap <Leader>f <Plug>(easymotion-bd-fl)
-xmap <Leader>f <Plug>(easymotion-bd-fl)
-omap <Leader>f <Plug>(easymotion-bd-fl)
-nmap <Leader>F <Plug>(easymotion-bd-fl)
-xmap <Leader>F <Plug>(easymotion-bd-fl)
-omap <Leader>F <Plug>(easymotion-bd-fl)
-
-nmap <Leader>t <Plug>(easymotion-bd-tl)
-xmap <Leader>t <Plug>(easymotion-bd-tl)
-omap <Leader>t <Plug>(easymotion-bd-tl)
-nmap <Leader>T <Plug>(easymotion-bd-tl)
-xmap <Leader>T <Plug>(easymotion-bd-tl)
-omap <Leader>T <Plug>(easymotion-bd-tl)
-
-nmap <Leader>w <Plug>(easymotion-bd-w)
-xmap <Leader>w <Plug>(easymotion-bd-w)
-omap <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>W <Plug>(easymotion-bd-W)
-xmap <Leader>W <Plug>(easymotion-bd-W)
-omap <Leader>W <Plug>(easymotion-bd-W)
-
-nmap <Leader>e <Plug>(easymotion-bd-e)
-xmap <Leader>e <Plug>(easymotion-bd-e)
-omap <Leader>e <Plug>(easymotion-bd-e)
-nmap <Leader>E <Plug>(easymotion-bd-E)
-xmap <Leader>E <Plug>(easymotion-bd-E)
-omap <Leader>E <Plug>(easymotion-bd-E)
-
-nmap <Leader>j <Plug>(easymotion-j)
-xmap <Leader>j <Plug>(easymotion-j)
-omap <Leader>j <Plug>(easymotion-j)
-nmap <Leader>k <Plug>(easymotion-k)
-xmap <Leader>k <Plug>(easymotion-k)
-omap <Leader>k <Plug>(easymotion-k)
-
-nmap <Leader>n <Plug>(easymotion-vim-n)
-xmap <Leader>n <Plug>(easymotion-vim-n)
-omap <Leader>n <Plug>(easymotion-vim-n)
-nmap <Leader>N <Plug>(easymotion-vim-N)
-xmap <Leader>N <Plug>(easymotion-vim-N)
-omap <Leader>N <Plug>(easymotion-vim-N)
+nmap s <Plug>(easymotion-sn)
+xmap s <Plug>(easymotion-sn)
+omap z <Plug>(easymotion-sn)
 
 " ReplaceWithRegister
 nmap gr <Plug>ReplaceWithRegisterOperator
