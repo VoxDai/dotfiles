@@ -17,9 +17,6 @@ set keep-english-in-normal
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
 
-nnoremap ]e :action GotoNextError<CR>
 nnoremap [e :action GotoPreviousError<CR>
-
-nnoremap <TAB> :action PreviousTab<CR>
-nnoremap <s-TAB> :action NextTab<CR>
+nnoremap ]e :action GotoNextError<CR>
 
