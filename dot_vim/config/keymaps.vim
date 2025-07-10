@@ -1,57 +1,53 @@
-" Yank from the cursor to the end of line
-noremap Y y$
+" Use `y` to copy to the system clipboard
+nnoremap <expr> y (v:register == '"' ? '"+y' : 'y')
+nnoremap <expr> Y (v:register == '"' ? '"+y$' : 'y$')
+nnoremap <expr> yy (v:register == '"' ? '"+yy' : 'yy')
+xnoremap <expr> y (v:register == '"' ? '"+y' : 'y')
+xnoremap <expr> Y (v:register == '"' ? '"+Y' : 'Y')
 
-" Map `H` to move to the beginning of the line, `L` to the end
+" Use `p` to paste from the system clipboard
+nnoremap <expr> p (v:register == '"' ? '"+p' : 'p')
+nnoremap <expr> P (v:register == '"' ? '"+P' : 'P')
+xnoremap <expr> p (v:register == '"' ? '"+p' : 'p')
+xnoremap <expr> P (v:register == '"' ? '"+P' : 'P')
+
+" Use `m` to cut (delete to system clipboard)
+nnoremap <expr> m (v:register == '"' ? '"+d' : 'd')
+nnoremap <expr> M (v:register == '"' ? '"+D' : 'D')
+nnoremap <expr> mm (v:register == '"' ? '"+dd' : 'dd')
+xnoremap <expr> m (v:register == '"' ? '"+d' : 'd')
+xnoremap <expr> M (v:register == '"' ? '"+D' : 'D')
+
+" Preserve original `m` (mark) command using `gm`
+nnoremap gm m
+
+" Show all marks with `gM`
+nnoremap gM :marks<CR>
+
+" Remap `H` to beginning of line, `L` to end of line
 noremap H ^
 noremap L $
 
-" Insert a new line without enter insert mode
+" Use `U` to redo (opposite of undo)
+nnoremap U <C-r>
+
+" Use `Q` to toggle search highlight visibility
+nnoremap <silent> Q :set hlsearch!<CR>
+
+" Insert a new line below/above without entering insert mode
 nnoremap go :call append(line("."), "")<CR>
 nnoremap gO :call append(line(".") - 1, "")<CR>
 
-" Use `U` to redo
-nnoremap U <C-r>
-
-" Use `Q` to toggle search highlights
-nnoremap <silent> Q :set hlsearch!<CR>
-
-" Redirect cut/delete/change commands to use the black hole register (_)
-nnoremap d "_d
-xnoremap d "_d
-nnoremap D "_D
-nnoremap dd "_dd
-
-nnoremap c "_c
-xnoremap c "_c
-nnoremap C "_C
-nnoremap cc "_cc
-
-nnoremap x "_x
-xnoremap x "_x
-nnoremap X "_X
-xnoremap X "_X
-
-" Remap `m` as cut (original `d`)
-nnoremap m d
-xnoremap m d
-nnoremap M D
-nnoremap mm dd
-
-" Restore `m` (mark) functionality with `gm`
-nnoremap gm m
-
-" Show all marks
-nnoremap gM :marks<CR>
-
-" Surround
+" Use `S` for surround operator (requires surround plugin)
 nmap S ys
 
-" EasyMotion
+" EasyMotion mappings
 nmap s <Plug>(easymotion-sn)
 xmap s <Plug>(easymotion-sn)
 omap z <Plug>(easymotion-sn)
 
-" ReplaceWithRegister
-nmap gr <Plug>ReplaceWithRegisterOperator
-nmap gR <Plug>ReplaceWithRegisterLine
-xmap gr <Plug>ReplaceWithRegisterVisual
+" ReplaceWithRegister mappings
+nmap <expr> gr (v:register == '"' ? '"+<Plug>ReplaceWithRegisterOperator' : '<Plug>ReplaceWithRegisterOperator')
+nmap <expr> gR (v:register == '"' ? '"+<Plug>ReplaceWithRegisterLine' : '<Plug>ReplaceWithRegisterLine')
+xmap <expr> gr (v:register == '"' ? '"+<Plug>ReplaceWithRegisterVisual' : '<Plug>ReplaceWithRegisterVisual')
+

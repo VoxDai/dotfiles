@@ -15,9 +15,6 @@ filetype indent on
 set autoread
 au FocusGained,BufEnter * silent! checktime
 
-" Use system clipboard
-set clipboard+=unnamed
-
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader=" "
