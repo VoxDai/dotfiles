@@ -1,49 +1,9 @@
-" Disable Vi compatibility to enable Vim's enhanced features
-set nocompatible
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim-plug
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Auto install Vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" Plugins
-call plug#begin('~/.vim/plugged')
-Plug 'vim-scripts/argtextobj.vim'
-Plug 'tpope/vim-commentary'
-Plug 'easymotion/vim-easymotion'
-Plug 'tommcdo/vim-exchange'
-Plug 'machakann/vim-highlightedyank'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'chrisbra/matchit'
-Plug 'dbakker/vim-paragraph-motion'
-Plug 'unblevable/quick-scope'
-Plug 'vim-scripts/ReplaceWithRegister'
-Plug 'tpope/vim-surround'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
-call plug#end()
-
-" EasyMotion setting
-let g:EasyMotion_do_mapping = 0 " Disable default mapping
-let g:EasyMotion_smartcase = 1  " Enable smart case
-
-" Argtextobj setting
-let g:argtextobj_pairs = "[:],(:),<:>"
-
-" vim-highlightedyank setting
-let g:highlightedyank_highlight_duration = 300
-
-" quick-scope setting
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable Vi compatibility to enable Vim's enhanced features
+set nocompatible
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -189,64 +149,8 @@ set wrap "Wrap lines
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
+" => Source other configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Yank from the cursor to the end of line
-noremap Y y$
-
-" Map `H` to move to the beginning of the line, `L` to the end
-noremap H ^
-noremap L $
-
-" Insert a new line without enter insert mode
-nnoremap go :call append(line("."), "")<CR>
-nnoremap gO :call append(line(".") - 1, "")<CR>
-
-" Use `U` to redo
-nnoremap U <C-r>
-
-" Use `Q` to toggle search highlights
-nnoremap <silent> Q :set hlsearch!<CR>
-
-" Redirect cut/delete/change commands to use the black hole register (_)
-nnoremap d "_d
-xnoremap d "_d
-nnoremap D "_D
-nnoremap dd "_dd
-
-nnoremap c "_c
-xnoremap c "_c
-nnoremap C "_C
-nnoremap cc "_cc
-
-nnoremap x "_x
-xnoremap x "_x
-nnoremap X "_X
-xnoremap X "_X
-
-" Remap `m` as cut (original `d`)
-nnoremap m d
-xnoremap m d
-nnoremap M D
-nnoremap mm dd
-
-" Restore `m` (mark) functionality with `gm`
-nnoremap gm m
-
-" Show all marks
-nnoremap gM :marks<CR>
-
-" Surround
-nmap S ys
-
-" EasyMotion
-nmap s <Plug>(easymotion-sn)
-xmap s <Plug>(easymotion-sn)
-omap z <Plug>(easymotion-sn)
-
-" ReplaceWithRegister
-nmap gr <Plug>ReplaceWithRegisterOperator
-nmap gR <Plug>ReplaceWithRegisterLine
-xmap gr <Plug>ReplaceWithRegisterVisual
-
+source ~/.vim/config/plugins.vim
+source ~/.vim/config/keymaps.vim
 
