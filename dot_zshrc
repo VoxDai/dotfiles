@@ -49,6 +49,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Proxy for Surge (when Enhanced Mode off)
+export http_proxy="http://127.0.0.1:6152"
+export https_proxy="http://127.0.0.1:6152"
+export all_proxy="socks5://127.0.0.1:6153"
+
 # Just source it.
 source $ZSH/oh-my-zsh.sh
 
