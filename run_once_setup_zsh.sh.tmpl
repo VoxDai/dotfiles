@@ -1,0 +1,68 @@
+#!/bin/bash
+set -e
+
+echo "[chezmoi] 开始检测 zsh 环境..."
+
+############################################
+# 1. 安装 Oh My Zsh（如果不存在）
+############################################
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "[install] 安装 Oh My Zsh ..."
+    RUNZSH=no CHSH=no KEEP_ZSHRC=yes \
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    echo "[ok] Oh My Zsh 已安装"
+fi
+
+
+############################################
+# 2. 安装 Powerlevel10k
+############################################
+P10K_DIR="$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
+
+if [ ! -d "$P10K_DIR" ]; then
+    echo "[install] 安装 Powerlevel10k ..."
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$P10K_DIR"
+else
+    echo "[ok] Powerlevel10k 已存在"
+fi
+
+
+############################################
+# 3. 安装 Oh My Zsh 插件
+############################################
+PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
+mkdir -p "$PLUGINS_DIR"
+
+plugins=(
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  fast-syntax-highlighting
+  zsh-autocomplete
+  conda-zsh-completion
+)
+
+plugin_urls=(
+  https://github.com/zsh-users/zsh-autosuggestions.git
+  https://github.com/zsh-users/zsh-syntax-highlighting.git
+  https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+  https://github.com/marlonrichert/zsh-autocomplete.git
+  https://github.com/conda-incubator/conda-zsh-completion.git
+)
+
+echo "[chezmoi] 检查 zsh 插件..."
+
+for i in "${!plugins[@]}"; do
+    plugin="${plugins[$i]}"
+    url="${plugin_urls[$i]}"
+    dest="$PLUGINS_DIR/$plugin"
+
+    if [ -d "$dest" ]; then
+        echo "[ok] $plugin 已存在"
+    else
+        echo "[install] 安装插件 $plugin ..."
+        git clone --depth=1 "$url" "$dest"
+    fi
+done
+
+echo "[done] zsh 环境安装步骤完成"
