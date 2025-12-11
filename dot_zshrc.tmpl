@@ -1,0 +1,10 @@
+{{ template "zsh/common/header.tmpl" . }}
+{{ template "zsh/common/omz_intro.tmpl" . }}
+{{ if eq .group "mac" }}
+{{ template "zsh/mac.tmpl" . }}
+{{ end }}
+{{ if eq .group "lab_server" }}
+{{ template "zsh/lab_server.tmpl" . }}
+{{ end }}
+{{ template "zsh/common/omz_outro.tmpl" . }}
+{{ template "zsh/common/local_hook.tmpl" . }}
