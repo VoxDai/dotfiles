@@ -1,0 +1,8 @@
+# Start Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
+# Set zsh-autocomplete to leave out expansion section
+zstyle ':completion:*' completer _complete _complete:-fuzzy _correct _approximate _ignored
+
+# Source Powerlevel10k configuration
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

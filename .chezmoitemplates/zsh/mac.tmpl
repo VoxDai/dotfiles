@@ -1,0 +1,32 @@
+# Set aliases
+zstyle ':omz:*' aliases no
+
+alias ls="lsd"
+alias ll="ls -l"
+alias la="ls -lA"
+alias lt="ls --tree"
+alias cat="bat"
+
+# >>> conda initialize (macOS) >>>
+
+# mamba initialize
+eval "$(mamba shell hook --shell zsh)"
+
+__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+# <<< conda initialize <<<
+
+# Proxy for Surge (when Enhanced Mode off)
+export http_proxy="http://127.0.0.1:6152"
+export https_proxy="http://127.0.0.1:6152"
+export all_proxy="socks5://127.0.0.1:6153"
