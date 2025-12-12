@@ -3,3 +3,7 @@
 .zshenv
 {{ end }}
 
+{{ if ne .group "lab_server" }}
+.profile
+{{ end }}
+
