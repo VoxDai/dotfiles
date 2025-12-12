@@ -1,5 +1,5 @@
 {{ if ne .group "mac" }}
-  dot_ideavimrc
-  dot_zshenv
+.ideavimrc
+.zshenv
 {{ end }}
 
