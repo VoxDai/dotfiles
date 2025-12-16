@@ -21,3 +21,5 @@ nnoremap ]] :action MethodDown<CR>
 nnoremap [e :action GotoPreviousError<CR>
 nnoremap ]e :action GotoNextError<CR>
 
+nnoremap <C-a> :DialIncrement<cr>
+nnoremap <C-x> :DialDecrement<cr>
