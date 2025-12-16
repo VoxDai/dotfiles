@@ -1,7 +1,8 @@
 source ~/.vimrc
 
 " IdeaVim plugins
-set functiontextobj
+set anyobject
+set dial
 set NERDTree
 set peekaboo
 
