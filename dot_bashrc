@@ -1,0 +1,11 @@
+# Auto-switch to zsh only for interactive SSH sessions
+case "$-" in
+    *i*) ;;
+    *) return ;;
+esac
+[ -n "$ZSH_VERSION" ] && return
+[ -z "$SSH_TTY" ] && return
+[ -n "$PYCHARM_HOSTED" ] && return
+[ -n "$VSCODE_IPC_HOOK_CLI" ] && return
+command -v zsh >/dev/null 2>&1 && exec zsh
+

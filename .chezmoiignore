@@ -4,5 +4,6 @@
 
 {{ if ne .group "lab_server" }}
 .profile
+.bashrc
 {{ end }}
 
