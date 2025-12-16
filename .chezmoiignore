@@ -1,5 +1,4 @@
 {{ if ne .group "mac" }}
-.ideavimrc
 .zshenv
 {{ end }}
 
