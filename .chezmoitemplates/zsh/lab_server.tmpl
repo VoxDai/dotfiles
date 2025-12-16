@@ -1,5 +1,5 @@
 # set proxy control (via SSH tunnel)
-PROXY_ADDR="http://127.0.0.1:7890"
+PROXY_ADDR="http://127.0.0.1:6152"
 
 proxy_on() {
   export http_proxy="$PROXY_ADDR"
@@ -17,8 +17,8 @@ proxy_off() {
 }
 
 proxy_status() {
-  if ss -lnt | grep -q ':7890'; then
-    echo "Tunnel: UP (127.0.0.1:7890 listening)"
+  if ss -lnt | grep -q ':6152'; then
+    echo "Tunnel: UP (127.0.0.1:6152 listening)"
   else
     echo "Tunnel: DOWN (no local listener)"
   fi
