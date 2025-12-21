@@ -7,6 +7,7 @@ set NERDTree
 set peekaboo
 
 " Idea specific settings
+set scrolloff=0
 set ideajoin
 set ideamarks
 set idearefactormode=normal
