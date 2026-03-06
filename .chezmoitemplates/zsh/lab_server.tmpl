@@ -1,5 +1,5 @@
-# set proxy control (via SSH tunnel)
-PROXY_ADDR="http://127.0.0.1:6152"
+# Surge LAN proxy
+PROXY_ADDR="http://192.168.1.192:6152"
 
 proxy_on() {
   export http_proxy="$PROXY_ADDR"
@@ -7,20 +7,24 @@ proxy_on() {
   export all_proxy="$PROXY_ADDR"
   export HTTP_PROXY="$PROXY_ADDR"
   export HTTPS_PROXY="$PROXY_ADDR"
+  export ALL_PROXY="$PROXY_ADDR"
+
   echo "Proxy ON -> $PROXY_ADDR"
 }
 
 proxy_off() {
   unset http_proxy https_proxy all_proxy
-  unset HTTP_PROXY HTTPS_PROXY
+  unset HTTP_PROXY HTTPS_PROXY ALL_PROXY
+
   echo "Proxy OFF"
 }
 
 proxy_status() {
-  if ss -lnt | grep -q ':6152'; then
-    echo "Tunnel: UP (127.0.0.1:6152 listening)"
+
+  if curl -s --max-time 3 -x $PROXY_ADDR https://www.google.com >/dev/null; then
+    echo "Surge proxy reachable: OK"
   else
-    echo "Tunnel: DOWN (no local listener)"
+    echo "Surge proxy reachable: FAIL"
   fi
 
   if env | grep -qi '_proxy='; then
