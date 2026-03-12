@@ -3,3 +3,5 @@
 	email = 61178988+VoxDai@users.noreply.github.com
 [init]
 	defaultBranch = main
+[core]
+	quotepath = false
