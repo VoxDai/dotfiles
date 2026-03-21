@@ -4,7 +4,6 @@ source ~/.vimrc
 set anyobject
 set dial
 set NERDTree
-set peekaboo
 
 " Idea specific settings
 set scrolloff=0
