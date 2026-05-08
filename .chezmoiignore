@@ -1,5 +1,6 @@
 {{ if ne .group "mac" }}
 .zshenv
+.zprofile
 .config/aerospace/aerospace.toml
 {{ end }}
 
