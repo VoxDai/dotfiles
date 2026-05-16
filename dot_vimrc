@@ -12,8 +12,10 @@ filetype plugin on
 filetype indent on
 
 " Set to auto read when a file is changed from the outside
-set autoread
-au FocusGained,BufEnter * silent! checktime
+if !has('ide')
+  set autoread
+  au FocusGained,BufEnter * silent! checktime
+endif
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
